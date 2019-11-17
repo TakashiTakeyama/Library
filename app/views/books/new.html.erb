@@ -1,2 +1,18 @@
-<h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+<% provide(:title, "Create books") %>
+<h1>books</h1>
+
+<div class="row">
+  <div class="book">
+    <%= form_for(@book) do |f| %>
+      <%= render 'shared/error_messages', resource: @book %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'book__title' %>
+
+      <%= f.label :author %>
+      <%= f.email_field :author, class: 'book__author' %>
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div> 
